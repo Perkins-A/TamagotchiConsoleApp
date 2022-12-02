@@ -8,5 +8,5 @@
 import Foundation
 
 print("Hello, I'm your new Tamagotchi, what is my name?")
-
+print ("I")
 
