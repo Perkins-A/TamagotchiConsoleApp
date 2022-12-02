@@ -9,33 +9,35 @@ import XCTest
 
 class TamagotchiTest: XCTestCase {
     
-    func testWhenICreateTamagotchiItsWeightHungerAndAgeAreInitialisedTo0() {
+    func testWhenICreateTamagotchiItsWeightHungerAndAgeAreInitialisedToCorrectValue() {
         // arrange
         
         // act
         let terry = Tamagotchi()
         
         // assert
-        XCTAssertEqual(terry.hungry, 0)
-        XCTAssertEqual(terry.happiness, 0)
-        XCTAssertEqual(terry.weight, 0.0)
+        XCTAssertEqual(terry.getHunger(), 5)
+        XCTAssertEqual(terry.getHappiness(), 5)
+        XCTAssertEqual(terry.getWeight(), 10.0)
     }
     
     func testThatEatingASnackReducesHungerIncreasesHappinessAndGainsWeight() {
         // arrange
-        let hungryReduction = 3
+        let hungerReduction = 3
         let happyIncrease = 2
         let weightGain = 1
         
         // act
         let terry = Tamagotchi()
-        let startWeight = terry.weight
-        let startHungry = terry.hungry
-        let startHappiness = terry.happiness
+        let startWeight = terry.getWeight()
+        let startHunger = terry.getHunger()
+        let startHappiness = terry.getHappiness()
         terry.eatASnack()
         
         // assert
-        XCTAssertEqual(hungryReduction, <#T##expression2: Equatable##Equatable#>)
+        XCTAssertEqual(hungerReduction, startHunger - terry.getHunger())
+        XCTAssertEqual(happyIncrease, terry.getHappiness() - startHappiness)
+        XCTAssertEqual(weightGain, terry.getWeight() - startWeight)
     }
 
 }

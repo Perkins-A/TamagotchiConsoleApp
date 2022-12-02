@@ -10,18 +10,33 @@ import Foundation
 
 class Tamagotchi {
     
-    var happiness: Int
-    var hungry: Int
-    var weight: Double
+    private var happiness: Int
+    private var hunger: Int
+    private var weight: Double
     
     init() {
         self.happiness = 0
-        self.hungry = 0
-        self.weight = 0
+        self.hunger = 0
+        self.weight = 10.0
     }
     
-    func eatASnack() {
-        
+    func getHunger() -> Int {
+        return self.hunger
+    }
+    func getHappiness() -> Int {
+        return self.happiness
+    }
+    func getWeight() -> Double {
+        return self.weight
     }
     
+    func eatSnack() {
+        if hunger >= 3 {
+            self.hunger -= 3
+        }
+        if weight <= 100 {
+            self.weight += 1
+        }
+        if happiness <= 
+    }
 }
