@@ -7,5 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
+print("Hello, I'm your new Tamagotchi, what is my name?")
+
 
